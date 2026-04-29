@@ -430,7 +430,7 @@ export default function Home() {
             </div>
             
             <div className="p-8 md:p-16 md:w-1/2 bg-slate-900">
-              <form action="https://formsubmit.co/israelfuentesblancas@gmail.com" method="POST" className="space-y-6">
+              <form action="https://formsubmit.co/755b840f8dc2a74c07d9482ea7a19b2e" method="POST" className="space-y-6">
                 {/* FormSubmit configuration */}
                 <input type="hidden" name="_subject" value="Nuevo contacto desde CleanCore360 Landing" />
                 <input type="hidden" name="_template" value="table" />
