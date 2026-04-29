@@ -27,6 +27,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <a href="#quienes-somos" className="hover:text-brand-600 transition-colors">¿Quiénes Somos?</a>
             <a href="#servicios" className="hover:text-brand-600 transition-colors">¿Qué Ofrecemos?</a>
+            <a href="#cobertura" className="hover:text-brand-600 transition-colors">Cobertura</a>
             <a href="#diferencial" className="hover:text-brand-600 transition-colors">Valor Diferencial</a>
             <a href="#futuro" className="hover:text-brand-600 transition-colors">Innovación</a>
           </div>
@@ -62,12 +63,12 @@ export default function Home() {
               CleanCore360 transforma la limpieza tradicional en un proceso estratégico, profesional y tecnológico para múltiples sectores empresariales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-brand-600 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-brand-700 transition-all shadow-xl shadow-brand-200">
+              <a href="#servicios" className="bg-brand-600 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-brand-700 transition-all shadow-xl shadow-brand-200">
                 Ver Soluciones <ChevronRight className="w-5 h-5" />
-              </button>
-              <button className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all">
+              </a>
+              <a href="#historia" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all text-center">
                 Nuestra Historia
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -80,47 +81,94 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-slate-900 mb-6">¿Quiénes Somos?</h2>
             <div className="space-y-4 text-muted">
               <p>
-                CleanCore360 es una empresa mexicana con más de **10 años de experiencia**, nacida en Pachuca, Hidalgo, donde inició operaciones como una jarcería enfocada en atender necesidades locales de limpieza.
+                CleanCore360 es una empresa mexicana con más de 10 años de experiencia, nacida en Pachuca, Hidalgo, donde inició operaciones como una jarcería enfocada en atender necesidades locales de limpieza.
               </p>
               <p>
-                Gracias a la experiencia adquirida y una visión de crecimiento constante, hace 4 años trasladamos nuestras operaciones a **Naucalpan, Estado de México**, fortaleciendo nuestra capacidad operativa y estratégica.
+                Gracias a la experiencia adquirida y una visión de crecimiento constante, hace 4 años trasladamos nuestras operaciones a EDOMEX, fortaleciendo nuestra capacidad operativa y estratégica.
               </p>
             </div>
             
-            <div className="mt-10 grid grid-cols-2 gap-6">
-              <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl font-bold text-brand-600 mb-1">10+</div>
                 <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">Años de Exp.</div>
               </div>
-              <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+              <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-3xl font-bold text-brand-600 mb-1">6+</div>
+                <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">En Hidalgo</div>
+              </div>
+              <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl font-bold text-brand-600 mb-1">4+</div>
                 <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">En Naucalpan</div>
               </div>
             </div>
           </div>
           
-          <div className="bg-slate-900 rounded-3xl p-8 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl -mr-32 -mt-32" />
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <MapPin className="text-brand-400" /> Cobertura Estratégica
-            </h3>
-            <ul className="space-y-4">
-              {['Ciudad de México', 'Estado de México', 'Zonas conurbadas'].map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-400" />
-                  <span className="text-slate-300">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-sm text-slate-400">
-              Nuestra evolución nos ha permitido pasar de un comercio tradicional a una empresa integral especializada.
-            </p>
+        </div>
+      </section>
+
+      {/* Cobertura Estratégica - Full Width Horizontal */}
+      <section id="cobertura" className="bg-white py-12">
+        <div className="section-padding">
+          <div className="bg-slate-900 rounded-[3rem] p-8 md:p-12 lg:p-16 text-white relative overflow-hidden border border-white/5 shadow-2xl">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/5 rounded-full blur-[120px] -mr-64 -mt-64" />
+            
+            <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-bold uppercase tracking-widest mb-6">
+                  <MapPin className="w-4 h-4" /> Alcance Regional
+                </div>
+                <h3 className="text-4xl font-bold mb-6">
+                  Cobertura <span className="text-brand-400">Estratégica</span>
+                </h3>
+                <p className="text-slate-400 mb-10 text-lg leading-relaxed">
+                  Contamos con una red logística robusta para atender de manera eficiente la zona centro del país.
+                </p>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
+                  {[
+                    'CDMX', 
+                    'EDOMEX', 
+                    'Toluca',
+                    'Hidalgo', 
+                    'Puebla', 
+                    'Querétaro', 
+                    'Morelos'
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-brand-500/50 transition-all group">
+                      <CheckCircle2 className="w-4 h-4 text-brand-400" />
+                      <span className="text-slate-300 font-semibold text-sm tracking-tight">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="p-6 rounded-2xl bg-brand-500/10 border border-brand-500/20">
+                  <p className="text-brand-100 leading-relaxed italic text-sm">
+                    "Garantizamos tiempos de entrega competitivos y un servicio personalizado en cada una de nuestras rutas."
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-full relative h-[350px] md:h-[500px] rounded-[2rem] overflow-hidden bg-slate-950/40 border border-white/5 shadow-inner flex items-center justify-center">
+                <Image 
+                  src="/mexico_full_map_coverage_1777423971052.png" 
+                  alt="Mapa de Cobertura Total México CleanCore360" 
+                  fill 
+                  className="object-contain p-8"
+                  priority
+                />
+                <div className="absolute top-6 right-6 bg-slate-900/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400">Zona Activa</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Historia (Timeline) */}
-      <section className="bg-white py-24">
+      <section id="historia" className="bg-white py-24">
         <div className="section-padding">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900">Nuestra Historia</h2>
