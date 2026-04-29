@@ -13,12 +13,14 @@ import {
   ChevronRight,
   CheckCircle2,
   Boxes,
-  ClipboardList
+  ClipboardList,
+  X
 } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
   const [nextUrl, setNextUrl] = useState("http://localhost:3000");
+  const [showProductsModal, setShowProductsModal] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -73,13 +75,19 @@ export default function Home() {
             <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl">
               CleanCore360 transforma la limpieza tradicional en un proceso estratégico, profesional y tecnológico para múltiples sectores empresariales.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <a href="#servicios" className="bg-brand-600 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-brand-700 transition-all shadow-xl shadow-brand-200">
                 Ver Soluciones <ChevronRight className="w-5 h-5" />
               </a>
-              <a href="#historia" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all text-center">
+              <a href="#historia" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all text-center flex items-center justify-center">
                 Nuestra Historia
               </a>
+              <button 
+                onClick={() => setShowProductsModal(true)}
+                className="bg-brand-50 text-brand-700 border border-brand-200 px-8 py-4 rounded-xl font-bold hover:bg-brand-100 transition-all text-center flex items-center justify-center gap-2"
+              >
+                <Package className="w-5 h-5" /> Catálogo de Productos
+              </button>
             </div>
           </div>
         </div>
@@ -234,7 +242,10 @@ export default function Home() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden flex flex-col group">
+          <div 
+            onClick={() => setShowProductsModal(true)}
+            className="bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden flex flex-col group cursor-pointer ring-2 ring-transparent hover:ring-brand-500/20"
+          >
             <div className="relative h-64 w-full overflow-hidden bg-slate-100">
               <Image 
                 src="/productos.png" 
@@ -569,6 +580,45 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Modal de Productos */}
+      {showProductsModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/80 backdrop-blur-sm">
+          <div className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-white z-10">
+              <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                <Package className="w-6 h-6 text-brand-600" />
+                Catálogo de Productos
+              </h3>
+              <button 
+                onClick={() => setShowProductsModal(false)}
+                className="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            <div className="p-6 overflow-y-auto custom-scrollbar flex-1 bg-slate-50">
+              <div className="flex flex-col gap-8">
+                <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                  <h4 className="text-xl font-bold text-slate-800 mb-4 px-2">Químicos</h4>
+                  <img src="/quimicos.png" alt="Químicos" className="w-full h-auto rounded-xl shadow-sm" />
+                </div>
+                
+                <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                  <h4 className="text-xl font-bold text-slate-800 mb-4 px-2">Jarcería</h4>
+                  <img src="/jarceria.png" alt="Jarcería" className="w-full h-auto rounded-xl shadow-sm" />
+                </div>
+                
+                <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                  <h4 className="text-xl font-bold text-slate-800 mb-4 px-2">Insumos</h4>
+                  <img src="/insumos.png" alt="Insumos" className="w-full h-auto rounded-xl shadow-sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
