@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import { 
   ShieldCheck, 
   MapPin, 
@@ -15,6 +18,14 @@ import {
 import Image from 'next/image';
 
 export default function Home() {
+  const [nextUrl, setNextUrl] = useState("http://localhost:3000");
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setNextUrl(window.location.origin);
+    }
+  }, []);
+
   return (
     <main className="min-h-screen bg-slate-50">
       {/* Navigation */}
@@ -434,7 +445,7 @@ export default function Home() {
                 {/* FormSubmit configuration */}
                 <input type="hidden" name="_subject" value="Nuevo contacto desde CleanCore360 Landing" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="http://localhost:3000" />
+                <input type="hidden" name="_next" value={nextUrl} />
                 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
