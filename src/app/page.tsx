@@ -31,9 +31,9 @@ export default function Home() {
             <a href="#diferencial" className="hover:text-brand-600 transition-colors">Valor Diferencial</a>
             <a href="#futuro" className="hover:text-brand-600 transition-colors">Innovación</a>
           </div>
-          <button className="bg-brand-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-700 transition-all shadow-lg shadow-brand-200">
+          <a href="#contacto" className="bg-brand-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-700 transition-all shadow-lg shadow-brand-200">
             Contactar
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -394,6 +394,111 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contacto */}
+      <section id="contacto" className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/5">
+            <div className="p-8 md:p-16 md:w-1/2 bg-brand-600 text-white flex flex-col justify-between">
+              <div>
+                <h2 className="text-4xl font-bold mb-6 leading-tight">¿Listo para transformar tu gestión de limpieza?</h2>
+                <p className="text-brand-100 text-lg mb-10 leading-relaxed">
+                  Déjanos tus datos y un consultor experto se pondrá en contacto contigo para diseñar una solución a tu medida.
+                </p>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                      <MapPin className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-brand-200 uppercase tracking-widest mb-0.5">Ubicación</div>
+                      <div className="font-semibold text-white">Naucalpan, Estado de México</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-12 pt-12 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-brand-600 font-bold">C</div>
+                  <span className="font-bold tracking-tight text-white">CleanCore<span className="text-brand-100">360</span></span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-8 md:p-16 md:w-1/2 bg-slate-900">
+              <form action="https://formsubmit.co/israelfuentesblancas@gmail.com" method="POST" className="space-y-6">
+                {/* FormSubmit configuration */}
+                <input type="hidden" name="_subject" value="Nuevo contacto desde CleanCore360 Landing" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="http://localhost:3000" />
+                
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Nombre Completo</label>
+                    <input 
+                      type="text" 
+                      name="nombre"
+                      required
+                      placeholder="Ej. Juan Pérez" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all outline-none"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Correo Electrónico</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      required
+                      placeholder="juan@empresa.com" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all outline-none"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Teléfono</label>
+                    <input 
+                      type="tel" 
+                      name="telefono"
+                      required
+                      placeholder="55 1234 5678" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all outline-none"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Empresa</label>
+                    <input 
+                      type="text" 
+                      name="empresa"
+                      placeholder="Nombre de tu empresa" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all outline-none"
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Mensaje</label>
+                  <textarea 
+                    name="mensaje"
+                    required
+                    rows={4}
+                    placeholder="¿En qué podemos ayudarte?" 
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all outline-none resize-none"
+                  />
+                </div>
+                
+                <button 
+                  type="submit"
+                  className="w-full bg-brand-600 text-white py-4 rounded-xl font-bold hover:bg-brand-700 transition-all shadow-xl shadow-brand-900/20 flex items-center justify-center gap-2 group"
+                >
+                  Enviar Mensaje <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </form>
             </div>
           </div>
         </div>
