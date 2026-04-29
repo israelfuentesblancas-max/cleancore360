@@ -20,10 +20,10 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <a href="#" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">C</div>
             <span className="text-xl font-bold tracking-tight text-slate-900">CleanCore<span className="text-brand-600">360</span></span>
-          </div>
+          </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <a href="#quienes-somos" className="hover:text-brand-600 transition-colors">¿Quiénes Somos?</a>
             <a href="#servicios" className="hover:text-brand-600 transition-colors">¿Qué Ofrecemos?</a>
@@ -404,10 +404,10 @@ export default function Home() {
         <div className="section-padding">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
-              <div className="flex items-center gap-2 mb-6">
+              <a href="#" className="flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
                 <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">C</div>
                 <span className="text-xl font-bold tracking-tight text-slate-900">CleanCore<span className="text-brand-600">360</span></span>
-              </div>
+              </a>
               <p className="text-slate-500 max-w-sm mb-8">
                 Evolución, cobertura y soluciones empresariales para un entorno más limpio, eficiente y profesional.
               </p>
