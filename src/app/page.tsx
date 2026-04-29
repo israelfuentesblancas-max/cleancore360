@@ -283,13 +283,36 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Adaptabilidad', desc: 'Opciones adaptadas a necesidades reales y distintos presupuestos.' },
-              { title: 'Trazabilidad', desc: 'Historial y control de consumo con trazabilidad documental completa.' },
-              { title: 'Eficiencia', desc: 'Optimización de compras y servicio integral centralizado.' }
+              { 
+                title: 'Adaptabilidad', 
+                desc: 'Opciones adaptadas a necesidades reales y distintos presupuestos.',
+                image: '/adaptabilidad.png'
+              },
+              { 
+                title: 'Trazabilidad', 
+                desc: 'Historial y control de consumo con trazabilidad documental completa.',
+                image: '/trazabilidad-route.png'
+              },
+              { 
+                title: 'Eficiencia', 
+                desc: 'Optimización de compras y servicio integral centralizado.',
+                image: '/eficiencia.png'
+              }
             ].map((item, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <h4 className="text-xl font-bold mb-4 text-brand-400">{item.title}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+              <div key={i} className="group p-0 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden flex flex-col hover:border-brand-500/50 transition-all duration-500">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image 
+                    src={item.image} 
+                    alt={item.title} 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80" />
+                </div>
+                <div className="p-8 pt-6">
+                  <h4 className="text-xl font-bold mb-4 text-brand-400 group-hover:text-brand-300 transition-colors">{item.title}</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -297,49 +320,80 @@ export default function Home() {
       </section>
 
       {/* Innovación y ERP */}
-      <section id="futuro" className="section-padding">
-        <div className="bg-brand-600 rounded-[2.5rem] p-8 md:p-16 text-white grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider mb-6">
-              <Cpu className="w-4 h-4" /> Innovación Tecnológica
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Transformación Digital: Nuestro ERP Propio</h2>
-            <p className="text-brand-100 mb-8 leading-relaxed">
-              Estamos desarrollando un **ERP en línea propio**, diseñado para fortalecer la experiencia del cliente y optimizar nuestras operaciones.
-            </p>
-            <div className="space-y-4">
-              {[
-                'Cotizaciones digitales inmediatas',
-                'Inventario en tiempo real',
-                'Transparencia operativa total',
-                'Historial de compras centralizado'
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-200" />
-                  <span className="font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+      <section id="futuro" className="section-padding overflow-hidden">
+        <div className="bg-slate-900 rounded-[3rem] p-8 md:p-16 text-white relative border border-white/5 shadow-2xl">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[100px] -mr-32 -mt-32" />
           
-          <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-md border border-white/20">
-            <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <ClipboardList className="w-6 h-6" /> Procesos Documentados
-            </h4>
-            <p className="text-brand-50 text-sm mb-6">
-              CleanCore360 ha profesionalizado su gestión a través de procesos internos que permiten:
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                'Control Administrativo',
-                'Seguimiento Comercial',
-                'Planeación Logística',
-                'Control de Inventario'
-              ].map((item) => (
-                <div key={item} className="p-4 bg-white/10 rounded-xl text-xs font-semibold">
-                  {item}
+          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-bold uppercase tracking-wider mb-6">
+                <Cpu className="w-4 h-4" /> Innovación Tecnológica
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                Transformación Digital: <span className="text-brand-400">Nuestro ERP Propio</span>
+              </h2>
+              <p className="text-slate-400 mb-10 text-lg leading-relaxed">
+                Estamos desarrollando un ecosistema digital diseñado para fortalecer la experiencia del cliente y optimizar nuestras operaciones de principio a fin.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-6 mb-12">
+                {[
+                  { title: 'Cotizaciones Digitales', desc: 'Respuesta inmediata y precisa.' },
+                  { title: 'Inventario Real', desc: 'Stock siempre actualizado.' },
+                  { title: 'Transparencia Total', desc: 'Trazabilidad en cada pedido.' },
+                  { title: 'Historial Central', desc: 'Todos tus consumos en un lugar.' }
+                ].map((item) => (
+                  <div key={item.title} className="flex flex-col gap-2">
+                    <div className="flex items-center gap-3 text-brand-400">
+                      <CheckCircle2 className="w-5 h-5" />
+                      <span className="font-bold text-slate-100">{item.title}</span>
+                    </div>
+                    <span className="text-sm text-slate-500 ml-8">{item.desc}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-8 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md">
+                <h4 className="text-xl font-bold mb-6 flex items-center gap-3">
+                  <ClipboardList className="w-6 h-6 text-brand-400" /> Procesos Documentados
+                </h4>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    'Control Administrativo',
+                    'Seguimiento Comercial',
+                    'Planeación Logística',
+                    'Control de Inventario'
+                  ].map((item) => (
+                    <div key={item} className="p-3 bg-white/5 rounded-xl text-[10px] uppercase tracking-wider font-bold text-slate-400 border border-white/5">
+                      {item}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-brand-500/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-75 transition-opacity" />
+              <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-slate-950 aspect-[4/3] lg:aspect-auto lg:h-[600px]">
+                <Image 
+                  src="/erp-preview.png" 
+                  alt="CleanCore360 ERP Mockup" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8 p-6 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-[10px] font-bold text-brand-400 uppercase tracking-widest mb-1">Próximo Lanzamiento</div>
+                      <div className="text-lg font-bold">Portal del Cliente v2.0</div>
+                    </div>
+                    <div className="w-12 h-12 bg-brand-600 rounded-full flex items-center justify-center">
+                      <div className="w-3 h-3 bg-white rounded-full animate-ping" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
