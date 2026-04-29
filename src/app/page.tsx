@@ -234,48 +234,70 @@ export default function Home() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
-            <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
-              <Package className="w-6 h-6" />
+          <div className="bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden flex flex-col group">
+            <div className="relative h-64 w-full overflow-hidden bg-slate-100">
+              <Image 
+                src="/productos.png" 
+                alt="Productos de Limpieza CleanCore360" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 w-14 h-14 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center text-brand-600 shadow-xl border border-white/20">
+                <Package className="w-7 h-7" />
+              </div>
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">Productos</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                'Químicos de limpieza',
-                'Jarcería',
-                'Papelería higiénica',
-                'Insumos institucionales',
-                'Equipamiento',
-                'Suministros especiales'
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2 text-slate-600 text-sm">
-                  <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="p-8 md:p-10 flex-1 bg-white">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Productos</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  'Químicos de limpieza',
+                  'Jarcería',
+                  'Papelería higiénica',
+                  'Insumos institucionales',
+                  'Equipamiento',
+                  'Suministros especiales'
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-slate-600 text-sm font-medium">
+                    <div className="w-2 h-2 rounded-full bg-brand-500 shadow-sm shadow-brand-200" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           
-          <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
-            <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6">
-              <Truck className="w-6 h-6" />
+          <div className="bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden flex flex-col group">
+            <div className="relative h-64 w-full overflow-hidden bg-slate-100">
+              <Image 
+                src="/servicios.png" 
+                alt="Servicios y Logística CleanCore360" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 w-14 h-14 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center text-emerald-600 shadow-xl border border-white/20">
+                <Truck className="w-7 h-7" />
+              </div>
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">Servicios & Logística</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                'Cotizaciones a medida',
-                'Administración de pedidos',
-                'Control documental',
-                'Inventarios',
-                'Entregas programadas',
-                'Seguimiento de consumo'
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2 text-slate-600 text-sm">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="p-8 md:p-10 flex-1 bg-white">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Servicios & Logística</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  'Cotizaciones a medida',
+                  'Administración de pedidos',
+                  'Control documental',
+                  'Inventarios',
+                  'Entregas programadas',
+                  'Seguimiento de consumo'
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-slate-600 text-sm font-medium">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-200" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
